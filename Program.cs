@@ -9,6 +9,8 @@ b = a;
 Console.WriteLine("valor de a:" + a);
 Console.WriteLine("valor de b:" + b);
 
+
+// ejercicio 1 invertir 
 int num;
 int numInvertido = 0;
 Console.WriteLine("Numero a invertir:");
@@ -24,67 +26,132 @@ if (int.TryParse(buff, out num))
     Console.WriteLine("NUMERO INVERTIDO:" + numInvertido);
 }
 
-int num1;
-Console.WriteLine("Numero a:");
-string buff1 = Console.ReadLine();
-int.TryParse(buff1, out num1);
 
-int num2;
-Console.WriteLine("Numero b:");
-string buff2 = Console.ReadLine();
-int.TryParse(buff2, out num2);
-
-int op;
-    Console.WriteLine("CALCULADORA:");
-    Console.WriteLine("1.SUMA:");
-    Console.WriteLine("2.RESTA:");
-    Console.WriteLine("3.MULTIPLACION:");
-    Console.WriteLine("4.DIVISION:");
-    Console.WriteLine("0.SALIR:");
-    Console.WriteLine("SELECCIONE LA OPERACION:");
-string buff3 = Console.ReadLine();
-int.TryParse(buff3, out op);
-while (op != 0)
+    int opcion;
+do
 {
-    switch (op)
+    Console.WriteLine("   ");
+    Console.WriteLine("****CALCULADORA****");
+    Console.WriteLine("1.SUMA");
+    Console.WriteLine("2.RESTA");
+    Console.WriteLine("3.MULTIPLICACION");
+    Console.WriteLine("4.DIVICION");
+    Console.WriteLine("5.SALIR");
+    Console.WriteLine("Elija una opcion:");
+    string buf = Console.ReadLine();
+    int.TryParse(buf, out opcion);
+
+        Console.WriteLine("Ingrese un numero:");
+        int numero1;
+        string buff1 = Console.ReadLine();
+        int.TryParse(buff1 , out numero1);
+
+        Console.WriteLine("ingrese otro numero:");
+        int numero2;
+        string buff2 = Console.ReadLine();
+        int.TryParse(buff2, out numero2);
+    
+
+    switch (opcion)
     {
         case 1:
-            int suma = 0;
-            suma = num1 + num2;
-            Console.WriteLine("suma:" + suma);
+            int suma = numero1 + numero2;
+            Console.WriteLine("RESULTADO SUMA:" + suma);
             break;
         case 2:
-            int resta = 0;
-            resta = num1 - num2;
-            Console.WriteLine("resta:" + resta);
+            int resta = numero1 - numero2;
+            Console.WriteLine("RESULTADO RESTA:" + resta);
             break;
         case 3:
-            int multp = 0;
-            multp = num1 * num2;
-            Console.WriteLine("multiplicacion:" + multp);
+            int mult = numero1 * numero2;
+            Console.WriteLine("RESULTADO MULTIPLICACION:" + mult);
             break;
         case 4:
-            float division = 0;
-            if (num2 != 0)
+            float division;
+            if (numero2 != 0)
             {
-                division = num1 / num2;
-                Console.WriteLine("division:" + division);
+                division =(float)numero1 / numero2;
+                Console.WriteLine("RESULTADO DIVISION:" + division);
+            }
+            else
+            {
+                Console.WriteLine("numero2 es igual a 0");
             }
             break;
         default:
-            op = 0;
+            Console.WriteLine("opcion salir");
             break;
+
     }
-    Console.WriteLine("CALCULADORA:");
-    Console.WriteLine("1.SUMA:");
-    Console.WriteLine("2.RESTA:");
-    Console.WriteLine("3.MULTIPLACION:");
-    Console.WriteLine("4.DIVISION:");
-    Console.WriteLine("0.SALIR:");
-    Console.WriteLine("SELECCIONE LA OPERACION:");
-    buff3 = Console.ReadLine();
-    int.TryParse(buff3, out op);
+
+
+}while (opcion != 5) ;
+
+
+//CALCULADORA 2 
+double numero;
+Console.WriteLine("ingrese un numero:");
+string buff3 = Console.ReadLine();
+double.TryParse(buff3, out numero);
+
+
+Console.WriteLine("1.Valor absoluto");
+double valorAbsoluto = Math.Abs(numero); // valor absoluto del numero ingresado
+Console.WriteLine($"El valor abs. del numero {numero}:{valorAbsoluto}");
+
+Console.WriteLine("2.Cuadrado");
+double cuadrado = numero * numero; // cuadrado del numero ingresado
+Console.WriteLine($"Cuadrado del numero {numero}: {cuadrado}");
+
+Console.WriteLine("3.Raiz Cuadrada");
+double raiz;
+if (numero >= 0)
+{
+    raiz = Math.Sqrt(numero); // obtenemos la raiz cuadrada del numero ingresado
+    Console.WriteLine($"La raiz del numero {numero} :" + raiz);
 }
+else
+{
+    Console.WriteLine("Numero invalido");
+}
+
+double radianes = numero * Math.PI / 180; //pasamos el numero ingresado a radianes
+
+Console.WriteLine("4.Sen"); //seno
+double seno = Math.Sin(radianes);
+Console.WriteLine($"El seno del numero{numero}:"+ seno);
+
+Console.WriteLine("5.Cos"); //coseno
+double cos = Math.Cos(radianes);
+Console.WriteLine($"Cos del numero {numero}" + cos);
+
+Console.WriteLine("6.Numero float a entero"); // numero float a entero
+int entero = (int)numero;
+Console.WriteLine($"Numero Float: {numero} numero Entero:" + entero);
+
+Console.WriteLine("ingrese dos numeros");
+Console.WriteLine("numero uno : ");
+int x;
+string buff4 = Console.ReadLine();
+int.TryParse(buff4, out x);
+
+Console.WriteLine("numero dos:");
+int y;
+string buff5 = Console.ReadLine();
+int.TryParse(buff5, out y);
+
+if (x > y)
+{
+    Console.WriteLine("El maximo entre los dos es:" + x);
+    Console.WriteLine("El minimo entre los dos es:" + y);
+}else
+{    
+    Console.WriteLine("El maximo entre los dos es:" + y);
+    Console.WriteLine("El minimo entre los dos es:" + x);
+}
+
+
+
 
 
 
