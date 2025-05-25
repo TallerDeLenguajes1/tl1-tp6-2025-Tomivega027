@@ -151,6 +151,93 @@ if (x > y)
 }
 
 
+// ejercicio 4 "Cadena de texto "
+
+Console.WriteLine("Ingrese una cadena de texto");
+string cadena1 = Console.ReadLine();
+int longitud = cadena1.Length;
+
+Console.WriteLine("Ingrese una segunda cadena de texto");
+string cadena2 = Console.ReadLine();
+string concatenacion = cadena1 + cadena2;
+
+Console.WriteLine("Ingrese la posición inicial de la subcadena:");
+int inicio;
+string buff6 = Console.ReadLine();
+int.TryParse(buff6, out inicio);
+
+Console.WriteLine("Ingrese la cantidad de caracteres a extraer de cadena1:");
+string buff7 = Console.ReadLine();
+int cantidad;
+int.TryParse(buff7, out cantidad);
+
+if (cantidad >= 0 && inicio + cantidad <= cadena1.Length)
+{
+    string subcadena = cadena1.Substring(inicio, cantidad);
+    Console.WriteLine($"Subcadena extraida: {subcadena}");
+}
+else
+{
+    Console.WriteLine("La posicion inicial o cantidad de caracteres a extrar excedientes");
+}
+int opcion2;
+Console.WriteLine("   ");
+    Console.WriteLine("****CALCULADORA****");
+    Console.WriteLine("1.SUMA");
+    Console.WriteLine("2.RESTA");
+    Console.WriteLine("3.MULTIPLICACION");
+    Console.WriteLine("4.DIVICION");
+    Console.WriteLine("5.SALIR");
+    Console.WriteLine("Elija una opcion:");
+    string buff8 = Console.ReadLine();
+    int.TryParse(buff8, out opcion2);
+
+        Console.WriteLine("Ingrese un numero:");
+        int num1;
+        string buff9 = Console.ReadLine();
+        int.TryParse(buff9 , out num1);
+
+        Console.WriteLine("ingrese otro numero:");
+        int num2;
+        string buff10 = Console.ReadLine();
+        int.TryParse(buff10, out num2);
+    
+
+    switch (opcion2)
+    {
+        case 1:
+            int suma = num1 + num2;
+            Console.WriteLine($"la suma de {num1} y de {num2} es igual a: {suma}");
+            break;
+        case 2:
+            int resta = num1 - num2;
+            Console.WriteLine($"la resta de {num1} y de {num2} es igual a: {resta}");
+            break;
+        case 3:
+            int mult = num1 * num2;
+            Console.WriteLine($"la multiplicacion  de {num1} y de {num2} es igual a: {mult}");
+            break;
+        case 4:
+            float division;
+            if (num2 != 0)
+            {
+                division =(float)num1 / num2;
+                Console.WriteLine($"la division de {num1} y de {num2} es igual a: {division}");
+            }
+            else
+            {
+                Console.WriteLine("num2 es igual a 0");
+            }
+            break;
+        default:
+            Console.WriteLine("opcion salir");
+            break;
+
+    }
+
+
+
+
 
 
 
