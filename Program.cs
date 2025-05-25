@@ -235,9 +235,46 @@ Console.WriteLine("   ");
 
     }
 
+    foreach (char caracter in cadena1)
+    {
+        Console.WriteLine(caracter);
+    }
 
+Console.WriteLine("Ingrese una ocurrencia de una palabra determinada :");
+string ocurrencia = Console.ReadLine();
 
+int posicionOcurrencia = cadena1.IndexOf(ocurrencia);
+Console.WriteLine($"la cadena '{cadena1} se encuentra enla posicion :{posicionOcurrencia}'");
 
+string CadenaMayuscula = cadena1.ToUpper();
+string CadenaMinuscula = cadena1.ToLower();
+
+Console.WriteLine(CadenaMayuscula);
+Console.WriteLine(CadenaMinuscula);
+////
+//// 
+
+Console.WriteLine("Ingrese caracteres separadores (, / ; .)");
+string separador = Console.ReadLine();
+
+string[] partes = cadena1.Split(separador);
+
+foreach (string parte in partes)
+{
+    Console.WriteLine(parte);
+}
+////
+/// 
+
+Console.WriteLine("Ingrese una operacion a resolver en texto (ejemplo: 582+2)");
+string operacion = Console.ReadLine();
+char[] operadores = { '+', '-', '*', '/' };
+
+string operacionPartes[] = operacion.Split(operadores);
+foreach (char op in operacion )
+{
+    
+}
 
 
 
