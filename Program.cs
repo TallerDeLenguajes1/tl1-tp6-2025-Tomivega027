@@ -268,13 +268,49 @@ foreach (string parte in partes)
 
 Console.WriteLine("Ingrese una operacion a resolver en texto (ejemplo: 582+2)");
 string operacion = Console.ReadLine();
-char[] operadores = { '+', '-', '*', '/' };
+char signo = '\0';
 
-string operacionPartes[] = operacion.Split(operadores);
-foreach (char op in operacion )
+foreach (char operador in operacion)
 {
-    
+    if (operador == '+' || operador == '-' || operador == '*' || operador == '/')
+    {
+        signo = operador;
+        break;
+    }
 }
+
+string[] partesOperacion = operacion.Split(signo);
+
+if (partesOperacion.Length == 2)
+    {
+        int num01 = int.Parse(partesOperacion[0]);
+        int num02 = int.Parse(partesOperacion[1]);
+        int resul = 0;
+
+        switch (signo)
+        {
+            case '+':
+                resul = num01 + num02;
+                break;
+            case '-':
+                resul = num01 - num02;
+                break;
+            case '*':
+                resul = num01 * num02;
+                break;
+            case '/':
+                resul = num02 != 0 ? num01 / num02 : 0;
+                break;
+        }
+
+        Console.WriteLine("Resultado: " + resul);
+    }
+    else
+    {
+        Console.WriteLine("Formato incorrecto.");
+    }
+
+
 
 
 

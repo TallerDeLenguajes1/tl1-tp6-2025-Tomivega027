@@ -1,1 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/24pP-Pw_)
+1. String es un tipo por referencia.
+2. Las secuencias de escape que tiene string son: 
+    | `\r`      | Retorno de carro (carriage return)                          |
+    | `\t`      | Tabulación horizontal          
+    | `\\`      | Barra invertida (backslash)    
+    | `\"`      | Comillas dobles dentro del string
+    | `\'`      | Comilla simple dentro del string
+    | `\0`      | Carácter nulo (null)           
+    | `\a`      | Alerta (bell)                  
+    | `\b`      | Retroceso (backspace)          
+    | `\f`      | Avance de página
+
+3. Los prefijos @ y $ antes de una cadena de texto cambian la forma en que el compilador interpreta el contenido del string. Pueden usarse por separado o incluso combinados ($@ o @$).             
+
+
